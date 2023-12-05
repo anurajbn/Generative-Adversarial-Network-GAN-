@@ -4,6 +4,9 @@ import tensorflow_datasets as tfds
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, Dense, Flatten, Reshape, LeakyReLU, Dropout, UpSampling2D
 
+# Load Fashion MNIST dataset using TensorFlow Datasets (TFDS)
+(ds_train, _), (_, _) = tfds.load('fashion_mnist', split=['train[:80%]', 'train[80%:]'], as_supervised=True)
+
 # Load Fashion MNIST dataset
 (ds_train, _), (_, _) = tf.keras.datasets.fashion_mnist.load_data()
 ds_train = ds_train / 255.0  # Normalize pixel values to [0, 1]
